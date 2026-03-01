@@ -8,7 +8,7 @@ const Page = async () => {
 
   return (
     <div className='min-h-screen min-w-screen flex items-center justify-center'>
-
+      <div>Register Page</div>
     </div>
   )
 }
