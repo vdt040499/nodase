@@ -1,15 +1,17 @@
-"use client";
-
+import { Button } from '@/components/ui/button';
 import { authClient } from '@/lib/auth-client';
+import { requireAuth } from '@/lib/auth-utils';
 import React from 'react'
 
 const Page = async () => {
-  const { data } = authClient.useSession();
+  await requireAuth()
 
   return (
-    <div className='min-h-screen min-w-screen flex items-center justify-center'>
-      <div>Home Page</div>
-    </div>
+    <>
+      <div className='min-h-screen min-w-screen flex items-center justify-center'>
+        protected server component
+      </div>
+    </>
   )
 }
 
