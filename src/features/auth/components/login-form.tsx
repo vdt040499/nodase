@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -24,7 +24,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-// import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 
 const loginSchema = z.object({
@@ -46,7 +46,18 @@ export function LoginForm() {
   })
 
   const onSubmit = async (values: LoginFormValues) => {
-    console.log(values)
+    await authClient.signIn.email({
+      email: values.email,
+      password: values.password,
+      callbackURL: "/"
+    }, {
+      onSuccess: () => {
+        router.push("/")
+      },
+      onError: (ctx) => {
+        toast.error(ctx.error.message)
+      }
+    })
   }
 
   const isPending = form.formState.isSubmitting;
