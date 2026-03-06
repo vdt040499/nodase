@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from '@/components/ui/button';
+import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -60,8 +61,8 @@ const RegisterForm = () => {
   return (
     <div className="flex flex-col gap-6">
       <Card>
-        <CardHeader>
-          <CardTitle className="text-center">
+        <CardHeader className='text-center'>
+          <CardTitle>
             Get Started
           </CardTitle>
           <CardDescription>
@@ -78,6 +79,7 @@ const RegisterForm = () => {
                     className="w-full"
                     disabled={isPending}
                   >
+                    <Image alt='Github' src='/logos/github.svg' width={20} height={20} />
                     Contitnue with Github
                   </Button>
                   <Button
@@ -85,6 +87,7 @@ const RegisterForm = () => {
                     className="w-full"
                     disabled={isPending}
                   >
+                    <Image alt='Google' src='logos/google.svg' width={20} height={20} />
                     Contitnue with Google
                   </Button>
                 </div>

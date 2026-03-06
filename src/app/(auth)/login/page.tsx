@@ -1,12 +1,13 @@
+import Link from "next/link"
+import Image from "next/image"
 import { LoginForm } from "@/features/auth/components/login-form"
 import { requireUnauth } from "@/lib/auth-utils"
+import Layout from "../layout"
 
 const Page = async () => {
     await requireUnauth();
 
-    return (
-        <LoginForm />
-    )
+    return <LoginForm />
 }
 
 export default Page
