@@ -1,9 +1,16 @@
 import { inngest } from '@/inngest/client';
 import { baseProcedure, createTRPCRouter, protectedProcedure } from '../init';
 import prisma from '@/lib/db';
+import { TRPCError } from '@trpc/server';
+import * as Sentry from "@sentry/nextjs";
 
 export const appRouter = createTRPCRouter({
     testAI: baseProcedure.mutation(async () => {
+        console.log("This log to check sentry")
+
+        Sentry.logger.info('User triggered test log', { log_source: 'sentry_test' })
+
+
         await inngest.send({
             name: "execute/ai"
         });

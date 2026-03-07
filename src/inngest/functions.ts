@@ -17,12 +17,22 @@ export const testAIModel = inngest.createFunction(
             model: google("gemini-2.5-flash"),
             system: "You are a helpful assistant.",
             prompt: "What is 2 + 2 ?",
+            experimental_telemetry: {
+                isEnabled: true,
+                recordInputs: true,
+                recordOutputs: true,
+            },
         });
 
         const { steps: openAISteps } = await step.ai.wrap("openai-generate-text", generateText, {
             model: openai("gpt-3.5-turbo"),
             system: "You are a helpful assistant.",
             prompt: "What is the capital of Vietnam ?",
+            experimental_telemetry: {
+                isEnabled: true,
+                recordInputs: true,
+                recordOutputs: true,
+            },
         });
 
         return {
