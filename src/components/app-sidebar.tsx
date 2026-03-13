@@ -95,7 +95,7 @@ export const AppSidebar = () => {
             </SidebarContent>
             <SidebarFooter>
                 <SidebarMenu>
-                    {/* {!hasActiveSubscription && !isLoading && (
+                    {!hasActiveSubscription && !isLoading && (
                         <SidebarMenuItem>
                             <SidebarMenuButton
                                 tooltip="Upgade to Pro"
@@ -106,7 +106,7 @@ export const AppSidebar = () => {
                                 <span>Upgrade to Pro</span>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
-                    )} */}
+                    )}
 
                     {/* <SidebarMenuItem>
                         <SidebarMenuButton
