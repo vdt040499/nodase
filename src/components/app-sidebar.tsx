@@ -108,7 +108,7 @@ export const AppSidebar = () => {
                         </SidebarMenuItem>
                     )}
 
-                    <SidebarMenuItem>
+                    {/* <SidebarMenuItem>
                         <SidebarMenuButton
                             tooltip="Billing Portal"
                             className="gap-x-4 h-10 px-4"
@@ -117,7 +117,7 @@ export const AppSidebar = () => {
                             <CreditCardIcon className="h-4 w-4" />
                             <span>Billing Portal</span>
                         </SidebarMenuButton>
-                    </SidebarMenuItem>
+                    </SidebarMenuItem> */}
                     <SidebarMenuItem>
                         <SidebarMenuButton
                             tooltip="Sign out"
